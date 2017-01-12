@@ -13,7 +13,6 @@ const router = new VueRouter({
   routes: [
     { name: 'discover', path: '/', component: discoverView },
     { name: 'movie', path: '/movie/:id', component: movieView },
-    // { name: 'Artist', path: '/artist/:id', component: movieView },
   ],
   mode: 'history',
   root: '/',
