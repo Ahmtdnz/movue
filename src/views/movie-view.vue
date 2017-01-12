@@ -3,7 +3,7 @@
     <p v-if="loading">Loading...</p>
     <h1>{{movie.original_title}}</h1>
     <div class="card text-left">
-      <img class="card-img-top" :src="image_url + movie.backdrop_path" alt="Card image cap">
+      <img class="card-img-top" :src="posterUrl(movie.backdrop_path)" alt="Card image cap">
       <div class="card-block">
         <ul>
           <li><strong>Genres:</strong></li>
@@ -28,8 +28,12 @@ export default {
     return {
       loading: true,
       movie: {},
-      image_url: IMAGE_URL,
     };
+  },
+  methods: {
+    posterUrl: function (path) {
+      return `${IMAGE_URL}${path}`;
+    },
   },
   created() {
     fetch(`${API_URL}movie/${this.$route.params.id}?api_key=${API_KEY}`)

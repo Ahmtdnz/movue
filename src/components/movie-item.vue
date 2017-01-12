@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-4 card-deck" v-for="movie in movies">
       <div class="card text-left">
-        <img class="card-img-top img-fluid" :src="image_url + movie.poster_path" alt="Card image cap">
+        <img class="card-img-top img-fluid" :src="posterUrl(movie.poster_path)" alt="Card image cap">
         <div class="card-block">
           <h4 class="card-title">{{movie.original_title}}</h4>
           <p class="card-text" v-text="movie.overview"></p>
@@ -23,10 +23,10 @@ import { IMAGE_URL } from '../constants';
 
 export default {
   props: ['movies'],
-  data() {
-    return {
-      image_url: IMAGE_URL,
-    };
+  methods: {
+    posterUrl: function (path) {
+      return `${IMAGE_URL}${path}`;
+    },
   },
 };
 </script>
