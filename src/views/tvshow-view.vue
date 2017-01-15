@@ -9,7 +9,7 @@ import { API_URL, API_KEY } from '../constants';
 import MediaDetail from '../components/mediaDetail';
 
 export default {
-  name: 'moviePage',
+  name: 'tvshowPage',
   components: {
     MediaDetail,
   },
@@ -20,7 +20,7 @@ export default {
     };
   },
   created() {
-    fetch(`${API_URL}movie/${this.$route.params.id}?api_key=${API_KEY}`)
+    fetch(`${API_URL}tv/${this.$route.params.id}?api_key=${API_KEY}`)
       .then(res => res.json())
       .then((res) => {
         this.media = res;

@@ -2,23 +2,24 @@
   <div class="col-md-12">
     <h1>Discover Popular Movies</h1>
     <p v-if="loading">Loading...</p>
-    <MovieItem :movies=movies></MovieItem>
+    <Frame :media=media :type=type></Frame>
   </div>
 </template>
 
 <script type="text/javascript">
-import MovieItem from '../components/movie-item';
+import Frame from '../components/frame';
 import { API_URL, API_KEY } from '../constants';
 
 export default {
   name: 'discoverPage',
   components: {
-    MovieItem,
+    Frame,
   },
   data() {
     return {
       loading: true,
-      movies: [],
+      media: [],
+      type: 'movie',
     };
   },
   created() {
@@ -26,7 +27,7 @@ export default {
       .then(res => res.json())
       .then(res => res.results)
       .then((response) => {
-        this.movies = response;
+        this.media = response;
         this.loading = false;
       });
   },

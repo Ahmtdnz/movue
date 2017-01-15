@@ -11,10 +11,14 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Movies</span></a>
+            <router-link :to="{ name: 'discover' }" class="navbar-brand">
+              <a class="nav-link" href="#">Movies</span></a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">TV Shows</a>
+            <router-link :to="{ name: 'tvshows' }" class="navbar-brand">
+              <a class="nav-link" href="#">TV Shows</a>
+            </router-link>
           </li>
         </ul>
       </div>

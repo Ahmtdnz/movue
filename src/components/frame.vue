@@ -1,17 +1,17 @@
 <template>
   <div class="row">
-    <div class="col-md-4 card-deck" v-for="movie in movies">
+    <div class="col-md-4 card-deck" v-for="media in media">
       <div class="card text-left">
-        <img class="card-img-top img-fluid" :src="posterUrl(movie.poster_path)" alt="Card image cap">
+        <img class="card-img-top img-fluid" :src="posterUrl(media.poster_path)" alt="Card image cap">
         <div class="card-block">
-          <h4 class="card-title">{{movie.original_title}}</h4>
-          <p class="card-text" v-text="movie.overview"></p>
+          <h4 class="card-title">{{media.original_title}} {{media.original_name}}</h4>
+          <p class="card-text" v-text="media.overview"></p>
         </div>
         <div class="card-footer">
-          <router-link :to="{ name: 'movie', params: { id: movie.id } }" class="btn btn-primary">
+          <router-link :to="{ name: type, params: { id: media.id } }" class="btn btn-primary">
             Detail
           </router-link>
-          <p class="average float-right">Rating: <span>{{movie.vote_average}}</span></p>
+          <p class="average float-right">Rating: <span>{{media.vote_average}}</span></p>
         </div>
       </div>
     </div>
@@ -22,7 +22,8 @@
 import { IMAGE_URL } from '../constants';
 
 export default {
-  props: ['movies'],
+  name: 'frame',
+  props: ['media', 'type'],
   methods: {
     posterUrl: function (path) {
       return `${IMAGE_URL}${path}`;
