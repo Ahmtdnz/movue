@@ -12,12 +12,12 @@
         <ul class="navbar-nav">
           <li class="nav-item active">
             <router-link :to="{ name: 'discover' }" class="navbar-brand">
-              <a class="nav-link" href="#">Movies</span></a>
+              <a class="nav-link">Movies</a>
             </router-link>
           </li>
           <li class="nav-item">
             <router-link :to="{ name: 'tvshows' }" class="navbar-brand">
-              <a class="nav-link" href="#">TV Shows</a>
+              <a class="nav-link">TV Shows</a>
             </router-link>
           </li>
         </ul>
