@@ -10,13 +10,13 @@
       </router-link>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <router-link :to="{ name: 'discover' }" class="navbar-brand">
+          <li class="nav-item">
+            <router-link :to="{ name: 'discover' }" tag="li" activeClass="active" class="navbar-brand">
               <a class="nav-link">Movies</a>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link :to="{ name: 'tvshows' }" class="navbar-brand">
+            <router-link :to="{ name: 'tvshows' }" tag="li" activeClass="active" class="navbar-brand">
               <a class="nav-link">TV Shows</a>
             </router-link>
           </li>
